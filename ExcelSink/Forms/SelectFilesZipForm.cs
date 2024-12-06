@@ -28,11 +28,14 @@ namespace ExcelSink.Forms
             string filter = textBox1.Text.ToLower();
 
             // Filtrování položek
-            var filteredItems = _files.Where(f => f.ToLower().Contains(filter)).ToList();
+            var filteredItems = _files
+                .Where(f => f.ToLower().Contains(filter))
+                .OrderDescending()
+                .ToArray();
 
             // Aktualizace ListBoxu
             listBox1.Items.Clear();
-            listBox1.Items.AddRange(filteredItems.ToArray());
+            listBox1.Items.AddRange(filteredItems);
         }
 
         public string[] SelectedFiles 
