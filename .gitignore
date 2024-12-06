@@ -3,5 +3,3 @@
 *.user
 */bin/
 */obj/
-ExcelSink/obj/project.assets.json
-ExcelSink/obj/ExcelSink.csproj.nuget.dgspec.json
